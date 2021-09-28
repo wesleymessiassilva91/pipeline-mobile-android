@@ -8,15 +8,15 @@ pipeline {
     /* agent { label 'mac' } */
 
     environment {
-        branch = 'master'
-        url = 'https://github.com/GustavoIanguas/HelloAndorid3'
+        branch = 'main'
+        url = 'https://github.com/wesleymessiassilva91/pipeline-mobile-android.git'
     }
 
     stages {
 
         stage('Checkout git') {
             steps {
-                git branch: branch, credentialsId: 'udemy', url: url
+                git branch: branch, credentialsId: 'Login-github', url: url
             }
         }
 
@@ -40,8 +40,8 @@ pipeline {
                     sh "cat app/hello.jks"
                 }
                 withCredentials([file(credentialsId: 'FIREBASE_SERVICE_ACCOUNT_FILE', variable: 'FIREBASE_SERVICE_ACCOUNT_FILE')]) {
-                    sh "cp '${FIREBASE_SERVICE_ACCOUNT_FILE}' app/service-account-firebasedist.json"
-                    sh "cat app/service-account-firebasedist.json"
+                    sh "cp '${FIREBASE_SERVICE_ACCOUNT_FILE}' app/helloandroid-key-admin.json"
+                    sh "cat app/helloandroid-key-admin.json"
                 }
             }
         }
@@ -71,3 +71,4 @@ pipeline {
         }
     }
 }
+
