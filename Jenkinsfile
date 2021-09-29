@@ -36,8 +36,8 @@ pipeline {
         stage('Credentials') {
             steps {
                 withCredentials([file(credentialsId: 'ANDROID_KEYSTORE_FILE', variable: 'ANDROID_KEYSTORE_FILE')]) {
-                    sh "cp '${ANDROID_KEYSTORE_FILE}' app/hello.jks"
-                    sh "cat app/hello.jks"
+                    sh "cp '${ANDROID_KEYSTORE_FILE}' app/hellokey.jks"
+                    sh "cat app/hellokey.jks"
                 }
                 withCredentials([file(credentialsId: 'FIREBASE_SERVICE_ACCOUNT_FILE', variable: 'FIREBASE_SERVICE_ACCOUNT_FILE')]) {
                     sh "cp '${FIREBASE_SERVICE_ACCOUNT_FILE}' app/helloandroid-key-admin.json"
