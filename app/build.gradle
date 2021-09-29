@@ -45,7 +45,7 @@ android {
             firebaseAppDistribution {
                 appId="1:860117034742:android:50f4c4cdc404f33be8aed7"
                 releaseNotesFile = "app/releasenotes.txt"
-                groups = "Teste"
+                testers= "wesley.silva.messias@gmail.com"
                 serviceCredentialsFile= "app/helloandroid-key-admin.json"
             }
 
