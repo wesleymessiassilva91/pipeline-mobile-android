@@ -53,13 +53,11 @@ pipeline {
             }
         }
 
-        stage('Publish') {
-            parallel {
                 stage('Firebase Distribution') {
                     steps {
                         sh "./gradlew appDistributionUploadRelease"
                     }
-                }
+               }
 
                 stage('Google Play...') {
                     steps {
@@ -69,6 +67,3 @@ pipeline {
                 }
             }
         }
-    }
-}
-
