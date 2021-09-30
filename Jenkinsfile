@@ -11,11 +11,13 @@ podTemplate(
     node('android') {
         def GIT_REPO_URL = "https://github.com/wesleymessiassilva91/pipeline-mobile-android.git"
         stage('Checkout git') {
+           container('android-sdk'){
             checkout([
               $class: 'GitSCM', 
               branches: [[name: '*/main']], 
               extensions: [], 
               userRemoteConfigs: [[credentialsId: '	Login-github', url: GIT_REPO_URL]]])
+           }
         }
         stage('Lint') {
             container('android-sdk'){
