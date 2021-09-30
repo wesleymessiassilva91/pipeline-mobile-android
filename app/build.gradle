@@ -18,8 +18,8 @@ android {
         applicationId "br.com.helloworld3"
         minSdk 23
         targetSdk 31
-        versionCode 475
-        versionName "4.75"
+        versionCode 476
+        versionName "4.76"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
