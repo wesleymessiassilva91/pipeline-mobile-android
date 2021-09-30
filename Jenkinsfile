@@ -49,12 +49,12 @@ podTemplate(
         }
         stage('Firebase Distribution') {
             container('android-sdk') {
-                sh "./gradlew appDistributionUploadRelease --track $Track"
+                sh "./gradlew appDistributionUploadRelease"
             }
         }
         stage('Google Play') {
             container('android-sdk') {
-                sh "./gradlew publishBundle --track $Track"
+                sh "./gradlew publishBundle"
             }
         }
     }
