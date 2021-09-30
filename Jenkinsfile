@@ -3,7 +3,7 @@ podTemplate(
     label: 'android',
     namespace: 'devops',
     containers: [
-        containerTemplate(name: 'android-sdk', image: 'androidsdk/android-30', command: ['chmod 777 /var/run/docker.sock''sleep'], args: '99d')
+        containerTemplate(name: 'android-sdk', image: 'androidsdk/android-30', command: ['chmod 777 /var/run/docker.sock', 'sleep'], args: '99d')
     ],
     volumes: [hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock')]
 ) 
