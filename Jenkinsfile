@@ -41,15 +41,16 @@ podTemplate(
                 }
             }
         }
+          stage('Google Play') {
+            container('android-sdk') {
+                sh "./gradlew bundleRelease publishBundle --track $Track"
+            }
+        }
         stage('Firebase Distribution') {
             container('android-sdk') {
                 sh "./gradlew assembleRelease appDistributionUploadRelease --track $Track"
             }
         }
-        stage('Google Play') {
-            container('android-sdk') {
-                sh "./gradlew bundleRelease publishBundle --track $Track"
-            }
-        }
+      
     }
 }
